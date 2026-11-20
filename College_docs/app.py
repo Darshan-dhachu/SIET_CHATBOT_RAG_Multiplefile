@@ -1,3 +1,4 @@
+
 import streamlit as st
 from RAG_engine import load_base, ask_rag
 st.set_page_config(page_title = "SIET_Chatbot", layout = "centered")
@@ -10,6 +11,7 @@ mykey = st.secrets["GROQ_API_KEY"]
 @st.cache_resource
 def initiate_rag():
   return load_base("College_docs")
+
 index, embed_model, chunks = initiate_rag()
 
 if "chat_hist" not in st.session_state:
